@@ -1,0 +1,13 @@
+{
+  "name": "foodbridge-nodejs",
+  "version": "1.0.0",
+  "description": "FoodBridge food waste management front-end served using Node.js, without a database",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

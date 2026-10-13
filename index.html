@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodBridge | Food Waste Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="student-details" aria-label="Student Details">
+  <strong>Student Details</strong>
+  <span>Name: JENIL PATEL</span>
+  <span>Enrolment No.: 250863116006</span>
+  <span>Class/Semester: IT Sem-5</span>
+  <span>Subject: Web Development</span>
+  <span>Institute: Laxmi Institute of Technology</span>
+</div>
+<header>
+  <nav class="navbar">
+    <div class="logo">🍽️ Food<span>Bridge</span></div>
+    <div class="navlinks">
+      <a href="#home">Home</a><a href="#how">How It Works</a><a href="#donate">Donate Food</a>
+      <a href="#find">Find Food</a><a href="#impact">Impact</a>
+    </div>
+    <button class="menu" onclick="toggleMenu()">☰</button>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-text">
+    <p class="tag">SDG 2 • ZERO HUNGER &nbsp; | &nbsp; SDG 12 • RESPONSIBLE CONSUMPTION</p>
+    <h1>Good food should<br><span>never go to waste.</span></h1>
+    <p class="lead">FoodBridge connects surplus food from homes, restaurants, events and campuses with people and organizations that can use it.</p>
+    <div class="actions"><a class="btn primary" href="#donate">Donate Surplus Food</a><a class="btn secondary" href="#find">Find Available Food</a></div>
+    <div class="stats"><div><b id="meals">12,840</b><small>Meals rescued</small></div><div><b id="kg">5,760 kg</b><small>Food saved</small></div><div><b>42</b><small>Partner NGOs</small></div></div>
+  </div>
+  <div class="hero-card">
+    <div class="food-icon">🥗</div>
+    <h3>Today's rescue</h3>
+    <p>Fresh meals available near you</p>
+    <div class="mini-card"><span>🍛</span><div><b>Community Kitchen</b><small>120 meals • 2.1 km away</small></div><button onclick="claimFood(120)">Claim</button></div>
+    <div class="mini-card"><span>🥪</span><div><b>Green Leaf Café</b><small>45 meals • 1.4 km away</small></div><button onclick="claimFood(45)">Claim</button></div>
+  </div>
+</section>
+
+<section id="how" class="section">
+  <div class="section-title"><p class="tag">SIMPLE • SAFE • SOCIAL</p><h2>How FoodBridge works</h2><p>One platform, three simple steps to turn surplus food into shared meals.</p></div>
+  <div class="cards">
+    <div class="card"><div class="number">01</div><h3>List surplus food</h3><p>Donors add the food type, quantity, pickup time and location.</p></div>
+    <div class="card"><div class="number">02</div><h3>Connect</h3><p>Nearby people and verified organizations discover available food.</p></div>
+    <div class="card"><div class="number">03</div><h3>Rescue & share</h3><p>Food is collected safely before its recommended consumption window.</p></div>
+  </div>
+</section>
+
+<section id="donate" class="section light">
+  <div class="form-wrap">
+    <div><p class="tag">FOR DONORS</p><h2>Donate surplus food</h2><p>Have extra food from an event, restaurant, hostel or home? Add the details below.</p></div>
+    <form id="donationForm">
+      <label>Donor / Organization<input required id="donor" placeholder="e.g. Green Leaf Café"></label>
+      <label>Food name<input required id="food" placeholder="e.g. Vegetable Rice"></label>
+      <div class="row"><label>Quantity (meals)<input required type="number" min="1" id="quantity" placeholder="50"></label>
+      <label>Pickup time<input required type="time" id="time"></label></div>
+      <label>Pickup location<input required id="location" placeholder="Campus / Area"></label>
+      <label>Food notes<textarea id="notes" placeholder="Freshly prepared, contains no nuts..."></textarea></label>
+      <button class="btn primary" type="submit">Publish Donation</button>
+      <p id="formMsg" class="success"></p>
+    </form>
+  </div>
+</section>
+
+<section id="find" class="section">
+  <div class="section-title"><p class="tag">FOR RECIPIENTS</p><h2>Available food nearby</h2><p>Browse current listings and request a pickup.</p></div>
+  <div class="filter"><input id="search" oninput="filterFood()" placeholder="🔎 Search food, donor or location..."></div>
+  <div id="foodList" class="food-grid">
+    <article class="food-card" data-text="community kitchen rice ahmedabad"><div class="food-photo">🍛</div><div class="food-body"><span class="badge">120 meals</span><h3>Vegetable Rice & Dal</h3><p>Community Kitchen • 2.1 km</p><small>Pickup before 9:30 PM</small><button onclick="claimFood(120)">Request Pickup</button></div></article>
+    <article class="food-card" data-text="green leaf cafe sandwiches campus"><div class="food-photo">🥪</div><div class="food-body"><span class="badge">45 meals</span><h3>Fresh Sandwiches</h3><p>Green Leaf Café • 1.4 km</p><small>Pickup before 10:00 PM</small><button onclick="claimFood(45)">Request Pickup</button></div></article>
+    <article class="food-card" data-text="hostel chapati sabzi college"><div class="food-photo">🫓</div><div class="food-body"><span class="badge">70 meals</span><h3>Chapati & Sabzi</h3><p>Student Hostel • 0.8 km</p><small>Pickup before 9:00 PM</small><button onclick="claimFood(70)">Request Pickup</button></div></article>
+  </div>
+</section>
+
+<section id="impact" class="impact">
+  <div><p class="tag">OUR COLLECTIVE IMPACT</p><h2>Small actions create a bigger change.</h2><p>Food waste contributes to unnecessary resource use while many people still face food insecurity. FoodBridge helps communities share surplus food locally.</p></div>
+  <div class="impact-grid"><div><b id="impactMeals">12,840</b><span>Meals rescued</span></div><div><b>5.7T</b><span>Food diverted from waste</span></div><div><b>42</b><span>Community partners</span></div><div><b>18</b><span>Areas reached</span></div></div>
+</section>
+</main>
+
+<footer><div class="logo">🍽️ FoodBridge</div><p>Aligned with UN SDG 2 & SDG 12 • Built for a more responsible food system.</p><p>© 2026 FoodBridge Student Project</p></footer>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
